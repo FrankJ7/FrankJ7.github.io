@@ -1,0 +1,353 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+
+:root {
+  --black-pearl: #161616;
+  --canary-yellow: #ffef00;
+  --pastel-yellow: #fdfd96;
+}
+
+html {
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  background-color: var(--black-pearl);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-button {
+  width: 0px;
+  height: 0px;
+}
+::-webkit-scrollbar-thumb {
+  background: #e1dd00;
+  border: 0px none #ffffff;
+  border-radius: 100px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ffdd00;
+}
+::-webkit-scrollbar-thumb:active {
+  background: #e1dd00;
+}
+::-webkit-scrollbar-track {
+  background: #101010;
+  border: 0px none #ffffff;
+  border-radius: 100px;
+}
+::-webkit-scrollbar-track:hover {
+  background: #101010;
+}
+::-webkit-scrollbar-track:active {
+  background: #101010;
+}
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+.panel {
+  position: fixed;
+  z-index: 998;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background-color: black;
+  transition: transform 0.3s ease;
+  transform: translate(-100%, 0);
+}
+
+.panel.is-active {
+  transform: translate(0, 0);
+}
+
+.buttons {
+  position: fixed;
+  z-index: 999;
+  bottom: 1vh;
+  right: 1vw;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--canary-yellow);
+  border: none;
+}
+
+.iframe-container {
+  position: fixed;
+  width: 350px;
+  height: 352px;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  margin: auto;
+  z-index: 999;
+  transform: translate(-100%, 0);
+  transition: transform 0.5s ease;
+}
+
+.iframe-is-active {
+  transform: translate(0, 0);
+}
+
+.iframe-container iframe {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border: 0;
+}
+
+.playlist-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 50px;
+  position: fixed;
+  bottom: 1vh;
+  left: 1vw;
+  margin: auto;
+  z-index: 999;
+  background-color: #212121;
+  border: none;
+  border-radius: 50%;
+  transition: opacity 0.4s ease;
+  cursor: pointer;
+}
+
+.playlist-btn:hover {
+  opacity: 0.7;
+}
+
+.playlist-btn i {
+  width: inherit;
+  font-size: 30px;
+  color: #1db954;
+}
+
+.menu {
+  width: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.menu a {
+  padding: 2rem;
+  width: inherit;
+  display: block;
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: var(--canary-yellow);
+  transition: all 0.3s ease;
+}
+
+.menu a:hover {
+  color: var(--pastel-yellow);
+  background-color: var(--black-pearl);
+}
+
+.hero {
+  /* margin-top: px; */
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 100%;
+  height: 100vh;
+  background-image: url(/img/SodaHero.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  background-color: #161616;
+  opacity: 0.35;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.hero img {
+  width: 350px;
+  height: 45px;
+  z-index: 10;
+  margin-bottom: 40px;
+}
+
+.hero img:hover {
+  filter: none;
+}
+
+.members {
+  margin: 20px 40px;
+}
+
+.title-sections {
+  color: #fff;
+  font-size: 3.75rem;
+  text-align: center;
+}
+
+.profiles-container {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 80px;
+}
+
+.profile {
+  flex-basis: 16.25rem;
+}
+
+.profile .profile-img {
+  height: 20rem;
+  width: 18rem;
+  border-radius: 5px;
+  filter: grayscale(100%);
+  cursor: default;
+  transition: 400ms ease;
+}
+
+.profile-img:hover {
+  filter: grayscale(0%);
+}
+
+.profile-name {
+  color: #fff;
+  margin-top: 30px;
+  font-size: 35px;
+}
+
+.profile-instrumentalist {
+  font-size: 18px;
+  letter-spacing: 3px;
+  color: var(--canary-yellow);
+}
+
+.profile-description {
+  color: #f5f6fa;
+  font-size: 16px;
+  margin-top: 20px;
+  text-align: justify;
+}
+
+.albums {
+  display: flex;
+  flex-direction: column;
+}
+
+.albums div {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.album {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 16.25rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.album-cover {
+  width: 250px;
+  max-width: 250px;
+  height: 250px;
+  border-radius: 5px;
+}
+
+.album-title {
+  font-size: 1.1rem;
+  text-align: center;
+  color: #fff;
+  margin-bottom: -10px;
+}
+
+.album-year {
+  font-size: 1.2rem;
+  color: var(--pastel-yellow);
+}
+
+@media only screen and (max-width: 1200px) {
+
+
+  .hero {
+    align-items: center;
+    background-image: url(/img/SodaPhone.jpg);
+    background-size: cover;
+  }
+
+  .hero img {
+    width: 250px;
+    height: 35px;
+  }
+
+  .profiles-container {
+    flex-direction: column;
+  }
+
+  .profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .profile-description {
+    text-align: center;
+    margin: 20p 60px 80px 60px;
+    font-size: 20px;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+
+  .iframe-container {
+    width: 300px;
+  }
+
+  .title-sections {
+    font-size: 40px;
+    color: #fff;
+  }
+
+  .profiles-container {
+    margin: 20px 0;
+  }
+
+  .profile-description {
+    margin: 20px 10px 80px 10px;
+  }
+}
